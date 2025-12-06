@@ -2,6 +2,8 @@
 body {
   font-family: "Montserrat-bold", sans-serif;
   text-align: center;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -35,6 +37,16 @@ p {
 
 .container-fluid {
   padding: 7% 15%;
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #ff4c68, #ff9770);
+  z-index: 1050;
 }
 
 /* Sections */
@@ -96,6 +108,12 @@ p {
   right: 30%;
 }
 
+#title .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
 /* Features Section */
 
 #features {
@@ -117,6 +135,23 @@ p {
 
 .icon:hover {
   color: #ff4c68;
+}
+
+/* Stats */
+
+#stats .stat-card {
+  padding: 20px 10px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  color: #fbecec;
+  font-weight: 600;
 }
 
 /* Testimonial Section */
@@ -152,6 +187,38 @@ p {
   padding: 100px;
 }
 
+.pricing-column .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-column .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* FAQ */
+
+.faq-accordion .btn-link {
+  font-weight: 600;
+  color: #ff4c68;
+  text-decoration: none;
+}
+
+.faq-accordion .btn-link:hover {
+  text-decoration: none;
+  color: #e43752;
+}
+
+.faq-accordion .card {
+  border: none;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.faq-accordion .card-header {
+  background: #fff;
+}
+
 .price-text {
   font-size: 3rem;
   line-height: 1.5;
@@ -167,6 +234,52 @@ p {
 
 .social-icon {
   margin: 20px 10px;
+}
+
+#back-to-top {
+  margin-top: 15px;
+}
+
+/* Dark mode */
+
+.dark-mode body,
+body.dark-mode {
+  background-color: #121212;
+  color: #e8e8e8;
+}
+
+body.dark-mode .white-section {
+  background-color: #1b1b1b;
+  color: #e8e8e8;
+}
+
+body.dark-mode .colored-section {
+  background-color: #ff4c68;
+  color: #fff;
+}
+
+body.dark-mode .card,
+body.dark-mode .modal-content {
+  background-color: #1f1f1f;
+  color: #e8e8e8;
+}
+
+body.dark-mode .btn-outline-dark {
+  color: #e8e8e8;
+  border-color: #e8e8e8;
+}
+
+body.dark-mode .btn-outline-dark:hover {
+  background-color: #e8e8e8;
+  color: #121212;
+}
+
+body.dark-mode .faq-accordion .card {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .faq-accordion .card-header {
+  background: #1f1f1f;
 }
 
 @media (max-width: 1028px) {

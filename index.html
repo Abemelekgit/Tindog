@@ -24,6 +24,8 @@
 
 <body>
 
+  <div id="scroll-progress"></div>
+
   <section class="colored-section" id="title">
 
     <div class="container-fluid">
@@ -40,7 +42,7 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto align-items-center">
             <li class="nav-item">
               <a class="nav-link" href="#footer">Contact</a>
             </li>
@@ -49,6 +51,12 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#cta">Download</a>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-sm btn-outline-light mx-lg-2 my-2 my-lg-0" id="theme-toggle" type="button">Light</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-sm btn-warning mx-lg-2 my-2 my-lg-0" data-toggle="modal" data-target="#demoModal" type="button">Book demo</button>
             </li>
           </ul>
 
@@ -104,6 +112,32 @@
       </div>
 
 
+    </div>
+  </section>
+
+
+  <!-- Stats -->
+
+  <section class="colored-section" id="stats">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3 stat-card">
+          <h2 class="stat-number" data-target="1200">0</h2>
+          <p class="stat-label">Daily Swipes</p>
+        </div>
+        <div class="col-md-3 stat-card">
+          <h2 class="stat-number" data-target="350">0</h2>
+          <p class="stat-label">Matches Made</p>
+        </div>
+        <div class="col-md-3 stat-card">
+          <h2 class="stat-number" data-target="48">0</h2>
+          <p class="stat-label">Cities Live</p>
+        </div>
+        <div class="col-md-3 stat-card">
+          <h2 class="stat-number" data-target="4.9">0</h2>
+          <p class="stat-label">App Store Rating</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -210,6 +244,63 @@
   </section>
 
 
+  <!-- FAQ -->
+
+  <section class="white-section" id="faq">
+    <div class="container-fluid">
+      <h2 class="section-heading">Questions, answered.</h2>
+      <div id="faqAccordion" class="faq-accordion">
+        <div class="card">
+          <div class="card-header" id="faqOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                How do matches work?
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="faqOne" data-parent="#faqAccordion">
+            <div class="card-body">
+              Swipe right on dogs you love. When they swipe right back, you can start chatting instantly.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Is TinDog safe?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="faqTwo" data-parent="#faqAccordion">
+            <div class="card-body">
+              Yes. Every profile is verified, and you can report suspicious behavior in one tap.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="faqThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Can I try premium?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="faqThree" data-parent="#faqAccordion">
+            <div class="card-body">
+              Absolutely. Start with a 7-day trial on any plan and cancel anytime.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
   <!-- Call to Action -->
 
   <section class="colored-section" id="cta">
@@ -218,7 +309,8 @@
 
       <h3 class="big-heading">Find the True Love of Your Dog's Life Today.</h3>
       <button class="download-button btn btn-lg btn-dark" type="button"><i class="fab fa-apple"></i> Download</button>
-      <button class="download-button btn btn-lg brn-light" type="button"><i class="fab fa-google-play"></i> Download</button>
+      <button class="download-button btn btn-lg btn-light" type="button"><i class="fab fa-google-play"></i> Download</button>
+      <button class="download-button btn btn-lg btn-outline-light" data-toggle="modal" data-target="#demoModal" type="button"><i class="far fa-calendar-check"></i> Book a live demo</button>
     </div>
   </section>
 
@@ -232,10 +324,58 @@
       <i class="social-icon fab fa-instagram"></i>
       <i class="social-icon fas fa-envelope"></i>
       <p>© Copyright 2018 TinDog</p>
+      <button class="btn btn-outline-dark" id="back-to-top" type="button">Back to top</button>
     </div>
   </footer>
 
 
+  <!-- Demo Modal -->
+  <div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="demoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="demoModalLabel">Book a live demo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="demoForm">
+            <div class="form-group">
+              <label for="demoName">Your name</label>
+              <input type="text" class="form-control" id="demoName" placeholder="Dog person name" required>
+            </div>
+            <div class="form-group">
+              <label for="demoEmail">Email</label>
+              <input type="email" class="form-control" id="demoEmail" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="demoCity">City</label>
+              <input type="text" class="form-control" id="demoCity" placeholder="Where are you matchmaking?">
+            </div>
+            <div class="form-group">
+              <label for="demoPlan">Plan</label>
+              <select class="form-control" id="demoPlan">
+                <option>Chihuahua</option>
+                <option>Labrador</option>
+                <option>Mastiff</option>
+              </select>
+            </div>
+          </form>
+          <div class="alert alert-success d-none" id="demoSuccess" role="alert">
+            Request received! We will email you shortly.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" form="demoForm" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/app.js"></script>
 </body>
 
 </html>
